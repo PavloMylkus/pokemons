@@ -16,13 +16,15 @@ const RightSide:React.FC<IUrl> = ({cardUrl}) => {
 	if(!data){
 		return <h1>Select Pokemon</h1>
 	}
+	const firstImage = Object.values(data.sprites)[0];
 
+	
   return (
 	<>
 		{data && <Card  sx={{ maxWidth: 500 }}>
 			<CardMedia
 				sx={{ height: 300 }}
-				image={data.sprites.back_default}
+				image={String(firstImage)}
 				title={data.name}
 			/>
 			<CardContent>
